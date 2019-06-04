@@ -1,9 +1,5 @@
 const path = require('path');
-const webpack = require('webpack');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
-const ManifestPlugin = require('webpack-manifest-plugin');
 
 module.exports = {
   entry: {
@@ -24,11 +20,6 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({ template: './src/index.html' }),
-    new AddAssetHtmlPlugin({ filepath: path.resolve(__dirname, './dll/*.dll.js') }),
-    new webpack.DllReferencePlugin({
-      manifest: path.resolve(__dirname, './dll/vendors.manifest.json')
-    }),
-    new ManifestPlugin()
   ],
   optimization: {
     splitChunks: {

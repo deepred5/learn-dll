@@ -1,16 +1,10 @@
 const path = require('path');
-const webpack = require('webpack');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const baseConfig = require('./webpack.base');
 
 const devConfig = {
   mode: 'development',
   devtool: 'cheap-module-eval-source-map',
-  entry: {
-    main: './src/index.js'
-  },
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: '[name].js',

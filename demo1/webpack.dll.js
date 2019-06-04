@@ -8,7 +8,7 @@ module.exports = {
     vendors: ['react', 'react-dom']
   },
   output: {
-    filename: '[name].[hash].dll.js',
+    filename: '[name].[hash:8].dll.js',
     path: path.resolve(__dirname, './dll'),
     library: '[name]'
   },
